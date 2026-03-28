@@ -119,3 +119,22 @@ students = [
 for name, sh, att, sl, ps in students:
     score = predict_grade(sh, att, sl, ps)
     print(f"{name}: {score} / 100")
+
+# -------------------------------
+# 10. USER INPUT
+# -------------------------------
+print("\nTry your own input:")
+
+try:
+    sh = float(input("Study hours per day: "))
+    att = float(input("Attendance (%): "))
+    sl = float(input("Sleep hours: "))
+    ps = float(input("Previous score: "))
+
+    result = predict_grade(sh, att, sl, ps)
+    print(f"\nPredicted Final Score: {result} / 100")
+
+except:
+    print("Invalid input. Please enter numbers only.")
+
+print("\nProgram finished.")
