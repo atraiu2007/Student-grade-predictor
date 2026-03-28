@@ -68,3 +68,16 @@ print("\nModel trained successfully!")
 # 5. PREDICTIONS
 # -------------------------------
 y_pred = model.predict(X_test)
+
+# -------------------------------
+# 6. EVALUATION
+# -------------------------------
+mae = mean_absolute_error(y_test, y_pred)
+
+print("\nModel Evaluation:")
+print("Mean Absolute Error:", round(mae, 2))
+
+# Show coefficients
+print("\nFeature Importance:")
+for feature, coef in zip(X.columns, model.coef_):
+    print(f"{feature}: {round(coef, 2)}")
