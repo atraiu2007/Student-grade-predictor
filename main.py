@@ -96,3 +96,26 @@ max_val = max(y_test.max(), y_pred.max())
 plt.plot([min_val, max_val], [min_val, max_val], 'r--')
 
 plt.show()
+
+# -------------------------------
+# 8. PREDICTION FUNCTION
+# -------------------------------
+def predict_grade(study, attend, sleep, prev):
+    input_data = np.array([[study, attend, sleep, prev]])
+    prediction = model.predict(input_data)[0]
+    return round(float(np.clip(prediction, 0, 100)), 2)
+
+# -------------------------------
+# 9. TEST CASES
+# -------------------------------
+print("\nSample Predictions:\n")
+
+students = [
+    ("Top Student", 8, 95, 8, 85),
+    ("Average Student", 5, 75, 6, 60),
+    ("Low Performer", 2, 55, 5, 40)
+]
+
+for name, sh, att, sl, ps in students:
+    score = predict_grade(sh, att, sl, ps)
+    print(f"{name}: {score} / 100")
