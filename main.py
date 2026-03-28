@@ -81,3 +81,18 @@ print("Mean Absolute Error:", round(mae, 2))
 print("\nFeature Importance:")
 for feature, coef in zip(X.columns, model.coef_):
     print(f"{feature}: {round(coef, 2)}")
+
+# -------------------------------
+# 7. SIMPLE VISUALIZATION
+# -------------------------------
+plt.scatter(y_test, y_pred)
+plt.xlabel("Actual Score")
+plt.ylabel("Predicted Score")
+plt.title("Actual vs Predicted")
+
+# Line for reference
+min_val = min(y_test.min(), y_pred.min())
+max_val = max(y_test.max(), y_pred.max())
+plt.plot([min_val, max_val], [min_val, max_val], 'r--')
+
+plt.show()
