@@ -44,3 +44,14 @@ print(df.head())
 # -------------------------------
 print("\nDataset Info:\n")
 print(df.describe())
+
+# -------------------------------
+# 3. PREPARE DATA
+# -------------------------------
+X = df[["study_hours", "attendance", "sleep_hours", "previous_score"]]
+y = df["final_score"]
+
+# Split data
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
