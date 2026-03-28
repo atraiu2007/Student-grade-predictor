@@ -39,3 +39,8 @@ df = pd.DataFrame({
 
 print("\nDataset Preview:\n")
 print(df.head())
+# -------------------------------
+# 2. BASIC ANALYSIS
+# -------------------------------
+print("\nDataset Info:\n")
+print(df.describe())
