@@ -48,7 +48,7 @@ build a basic ML model.
 
 2.  Run the Python file:
 
-    python project.py
+    python main.py
 
 ------------------------------------------------------------------------
 
